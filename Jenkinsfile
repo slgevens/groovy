@@ -2,7 +2,7 @@ node{
     def commitid
     stage('git clone/pull'){
         checkout scm
-        sh "git rev-parse --short head > .git/commit-id"
+        sh "git rev-parse --short HEAD > .git/commit-id"
         commitid = readFile(".git/commit-id").trim()
     }
     stage('test'){
